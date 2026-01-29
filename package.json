@@ -1,15 +1,23 @@
 {
   "name": "veloza_motors",
   "version": "1.0.0",
-  "description": "",
+  "description": "sport cars dealership webpage project",
+  "keywords": [],
+  "homepage": "https://github.com/02peri-ops/Proyecto-Carros#readme",
+  "bugs": {
+    "url": "https://github.com/02peri-ops/Proyecto-Carros/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/02peri-ops/Proyecto-Carros.git"
+  },
+  "license": "ISC",
+  "author": "Samuel Esquivel",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
@@ -17,5 +25,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
