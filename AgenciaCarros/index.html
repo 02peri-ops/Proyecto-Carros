@@ -1,14 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia de Carros.com</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body> 
-    <div class="header">
-        <h1>Veloza Motors</h1>
-        <h2>La mejor opcion para usted</h2>
-    </div>
+<body>
+    <header>
+        <nav>
+            <h1>Veloza Motors</h1>
+            <ul>
+                <li><a href="Inicio">Inicio</a></li>
+                <li><a href="Catálogo">Catálogo</a></li>
+                <li><a href="Contactanos">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Inicio" class="container">
+            <h2>Inicio</h2>
+            <p>Bienvenido a Veloza Motors. Aquí encontrarás una amplia variedad de vehículos de gama alta, desde nuevos y usados para satisfacer sus experiencias de conducción.</p>
+            <button onclick="location.href='Catálogo'">Ver Catálogo</button>
+        </section>
+
+        <section id="Catálogo" class="container"></section>
+            <!-- Muestra los vehículos desde la base de datos de MongoDB -->
+            <h2>Catálogo de Vehículos</h2>
+            <div id="vehiculos-container"></div>             
+        </section>
+
+        <section id="Contactanos" class="container">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes alguna pregunta o necesitas más información sobre nuestros vehículos? ¡Contáctanos!</p>
+            <form id="contact-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Veloza Motors. Todos los derechos reservados.</p>
+        </footer>
+    </main>
 </body>
 </html>
