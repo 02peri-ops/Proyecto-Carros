@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 //Conexión a MongoDB
-mongoose.conect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Conectado a MongoDB'))
     .catch((error) => console.error('Error al conectar a MongoDB:', error));
 
