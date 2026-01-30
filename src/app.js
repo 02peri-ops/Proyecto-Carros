@@ -1,8 +1,8 @@
 // Importar las dependencias
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 require('dotenv').config();
-
 //Se crea la app 
 const app = express();
 
