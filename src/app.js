@@ -15,6 +15,11 @@ app.get('/', (req, res) => {
     res.send('¡Hola, mundo! La aplicación está funcionando correctamente.');
 });
 
+//Conexión a MongoDB
+moongose.conect(process.env.MONGO_URI)
+    .then(() => console.log('Conectado a MongoDB'))
+    .catch((error) => console.error('Error al conectar a MongoDB:', error));
+
 //Puerto desde variables de entorno
 const PORT = process.env.PORT || 3000;
 
