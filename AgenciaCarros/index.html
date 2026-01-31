@@ -1,56 +1,524 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencia de Carros.com</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veloza Motors - Tu agencia de confianza para comprar el auto de tus sueños">
+  <title>Veloza Motors - Agencia de Autos</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Veloza Motors</h1>
-            <ul>
-                <li><a href="Inicio">Inicio</a></li>
-                <li><a href="Catálogo">Catálogo</a></li>
-                <li><a href="Contactanos">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">🚗</div>
+        <span>Veloza Motors</span>
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#autos" class="nav-link">Autos</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+      
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <section id="Inicio" class="container">
-            <h2>Inicio</h2>
-            <p>Bienvenido a Veloza Motors. Aquí encontrarás una amplia variedad de vehículos de gama alta, desde nuevos y usados para satisfacer sus experiencias de conducción.</p>
-            <button onclick="location.href='Catálogo'">Ver Catálogo</button>
-        </section>
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Encuentra el Auto de Tus Sueños</h1>
+        <p class="hero-subtitle">
+          Ofrecemos la mejor selección de vehículos de alta gama con financiamiento 
+          flexible y servicio de primera clase. Tu próximo auto te está esperando.
+        </p>
+        <div class="hero-buttons">
+          <a href="#autos" class="btn btn-primary btn-lg">Ver Inventario</a>
+          <a href="#contacto" class="btn btn-secondary btn-lg">Contáctanos</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Autos Vendidos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Clientes Satisfechos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Años de Experiencia</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop" alt="Colección de autos de lujo">
+      </div>
+    </div>
+  </section>
 
-        <section id="Catálogo" class="container"></section>
-            <!-- Muestra los vehículos desde la base de datos de MongoDB -->
-            <h2>Catálogo de Vehículos</h2>
-            <div id="vehiculos-container"></div>             
-        </section>
+  <!-- Autos Destacados -->
+  <section class="section section-gray" id="autos">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Autos Destacados</h2>
+        <p class="section-subtitle">Descubre nuestra selección de vehículos premium cuidadosamente seleccionados para ti</p>
+      </div>
+      
+      <div class="cars-grid">
+        <!-- BMW X5 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=250&fit=crop" alt="BMW X5">
+            <span class="car-badge">Nuevo</span>
+          </div>
+          <div class="car-content">
+            <h3 class="car-title"><a href="#">BMW X5 2024</a></h3>
+            <div class="car-price">$85,000</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <span>⛽</span> 15,000 km
+              </div>
+              <div class="car-feature">
+                <span>⚙️</span> Automático
+              </div>
+              <div class="car-feature">
+                <span>🛡️</span> Gasolina
+              </div>
+            </div>
+            <div class="car-actions">
+              <a href="#contacto" class="btn btn-primary btn-sm">Detalles</a>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Cotizar</a>
+            </div>
+          </div>
+        </div>
 
-        <section id="Contactanos" class="container">
-            <h2>Contáctanos</h2>
-            <p>¿Tienes alguna pregunta o necesitas más información sobre nuestros vehículos? ¡Contáctanos!</p>
-            <form id="contact-form">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <!-- Mercedes-Benz E-Class -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=250&fit=crop" alt="Mercedes-Benz E-Class">
+            <span class="car-badge">Popular</span>
+          </div>
+          <div class="car-content">
+            <h3 class="car-title"><a href="#">Mercedes-Benz E-Class</a></h3>
+            <div class="car-price">$72,500</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <span>⛽</span> 8,500 km
+              </div>
+              <div class="car-feature">
+                <span>⚙️</span> Automático
+              </div>
+              <div class="car-feature">
+                <span>🛡️</span> Híbrido
+              </div>
+            </div>
+            <div class="car-actions">
+              <a href="#contacto" class="btn btn-primary btn-sm">Detalles</a>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Cotizar</a>
+            </div>
+          </div>
+        </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <!-- Audi Q8 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=400&h=250&fit=crop" alt="Audi Q8">
+            <span class="car-badge">Oferta</span>
+          </div>
+          <div class="car-content">
+            <h3 class="car-title"><a href="#">Audi Q8 2024</a></h3>
+            <div class="car-price">$95,000</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <span>⛽</span> 5,000 km
+              </div>
+              <div class="car-feature">
+                <span>⚙️</span> Automático
+              </div>
+              <div class="car-feature">
+                <span>🛡️</span> Gasolina
+              </div>
+            </div>
+            <div class="car-actions">
+              <a href="#contacto" class="btn btn-primary btn-sm">Detalles</a>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Cotizar</a>
+            </div>
+          </div>
+        </div>
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
+        <!-- Tesla Model S -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=400&h=250&fit=crop" alt="Tesla Model S">
+            <span class="car-badge">Eléctrico</span>
+          </div>
+          <div class="car-content">
+            <h3 class="car-title"><a href="#">Tesla Model S Plaid</a></h3>
+            <div class="car-price">$110,000</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <span>⚡</span> 12,000 km
+              </div>
+              <div class="car-feature">
+                <span>⚙️</span> Automático
+              </div>
+              <div class="car-feature">
+                <span>🔋</span> Eléctrico
+              </div>
+            </div>
+            <div class="car-actions">
+              <a href="#contacto" class="btn btn-primary btn-sm">Detalles</a>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Cotizar</a>
+            </div>
+          </div>
+        </div>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+        <!-- Porsche Cayenne -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="data:image/jpeg;base64,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" alt="Porsche Cayenne">
+            <span class="car-badge">Nuevo</span>
+          </div>
+          <div class="car-content">
+            <h3 class="car-title"><a href="#">Porsche Cayenne GTS</a></h3>
+            <div class="car-price">$125,000</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <span>⛽</span> 3,200 km
+              </div>
+              <div class="car-feature">
+                <span>⚙️</span> Automático
+              </div>
+              <div class="car-feature">
+                <span>🛡️</span> Gasolina
+              </div>
+            </div>
+            <div class="car-actions">
+              <a href="#contacto" class="btn btn-primary btn-sm">Detalles</a>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Cotizar</a>
+            </div>
+          </div>
+        </div>
 
-        <footer>
-            <p>&copy; 2024 Veloza Motors. Todos los derechos reservados.</p>
-        </footer>
-    </main>
+        <!-- Lexus RX 350 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop" alt="Lexus RX">
+            <span class="car-badge">Garantizado</span>
+          </div>
+          <div class="car-content">
+            <h3 class="car-title"><a href="#">Lexus RX 350</a></h3>
+            <div class="car-price">$58,000</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <span>⛽</span> 22,000 km
+              </div>
+              <div class="car-feature">
+                <span>⚙️</span> Automático
+              </div>
+              <div class="car-feature">
+                <span>🛡️</span> Híbrido
+              </div>
+            </div>
+            <div class="car-actions">
+              <a href="#contacto" class="btn btn-primary btn-sm">Detalles</a>
+              <a href="#contacto" class="btn btn-secondary btn-sm">Cotizar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Ofrecemos una gama completa de servicios para satisfacer todas tus necesidades automotrices</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3 class="service-title">Financiamiento Flexible</h3>
+          <p class="service-description">Obtén las mejores tasas de financiamiento con plazos adaptados a tu presupuesto y necesidades.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-title">Servicio de Mantenimiento</h3>
+          <p class="service-description">Taller especializado con técnicos certificados y repuestos originales para mantener tu auto en óptimas condiciones.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3 class="service-title">Garantía Extendida</h3>
+          <p class="service-description">Protección completa para tu inversión con paquetes de garantía extendida de hasta 5 años.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3 class="service-title">Trade-In</h3>
+          <p class="service-description">Cambia tu auto actual por uno nuevo con la mejor tasación del mercado. Proceso rápido y sencillo.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🚗</div>
+          <h3 class="service-title">Prueba de Manejo</h3>
+          <p class="service-description">Experimenta la emoción de conducir antes de decidir. Agenda tu prueba de manejo sin compromiso.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">📞</div>
+          <h3 class="service-title">Asistencia 24/7</h3>
+          <p class="service-description">atención personalizada en todo momento. Nuestro equipo está disponible para resolver cualquier duda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="section section-gray" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+        <p class="section-subtitle">Miles de clientes satisfechos nos respaldan con su confianza</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">La experiencia en Veloza Motors fue increíble. El equipo me ayudó a encontrar el auto perfecto para mi familia. El financiamiento fue rápido y sin complicaciones. ¡Totalmente recomendable!</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Carlos Martínez" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Carlos Martínez</h4>
+              <span>Cliente desde 2022</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">Hola</p>
+          <div class="testimonial-author">
+            <img src="data:image/jpeg;base64,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" alt="Samuel" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Samuel Esquivel</h4>
+              <span>Cliente desde 1999</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">El mejor dealer de autos en la ciudad. Transparentes, profesionales y con una gran variedad de vehículos. Me encantó el proceso de compra, fue mucho más fácil de lo que esperaba.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Roberto López" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Roberto López</h4>
+              <span>Cliente desde 2021</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="contact-section">
+        <div class="contact-info">
+          <h2>Contáctanos</h2>
+          <p>¿Tienes alguna pregunta o necesitas más información sobre nuestros autos? No dudes en comunicarte con nosotros. Nuestro equipo estará encantado de ayudarte.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-text">
+                <h4>Ubicación</h4>
+                <p>Avenida Principal 1234, Ciudad</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-text">
+                <h4>Teléfono</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>info@velozamotors.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div class="contact-text">
+                <h4>Horario</h4>
+                <p>Lunes - Sábado: 9:00 AM - 7:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre Completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono">
+            </div>
+            <div class="form-group">
+              <label for="interes">Auto de Interés</label>
+              <select id="interes" name="interes">
+                <option value="">Seleccionar auto</option>
+                <option value="bmw-x5">BMW X5 2024</option>
+                <option value="mercedes-e">Mercedes-Benz E-Class</option>
+                <option value="audi-q8">Audi Q8 2024</option>
+                <option value="tesla-model-s">Tesla Model S Plaid</option>
+                <option value="porsche-cayenne">Porsche Cayenne GTS</option>
+                <option value="lexus-rx">Lexus RX 350</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" rows="4"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">🚗</div>
+            <span>Veloza Motors</span>
+          </div>
+          <p>Tu agencia de confianza para encontrar el auto de tus sueños. Ofrecemos calidad, transparencia y servicio excepcional desde hace más de 15 años.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">📘</a>
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">📺</a>
+          </div>
+        </div>
+        
+        <div class="footer-links-section">
+          <h4 class="footer-title">Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio" class="footer-link">Inicio</a></li>
+            <li><a href="#autos" class="footer-link">Autos</a></li>
+            <li><a href="#servicios" class="footer-link">Servicios</a></li>
+            <li><a href="#testimonios" class="footer-link">Testimonios</a></li>
+            <li><a href="#contacto" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-section">
+          <h4 class="footer-title">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Financiamiento</a></li>
+            <li><a href="#" class="footer-link">Trade-In</a></li>
+            <li><a href="#" class="footer-link">Mantenimiento</a></li>
+            <li><a href="#" class="footer-link">Garantía Extendida</a></li>
+            <li><a href="#" class="footer-link">Asistencia 24/7</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-section">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Términos y Condiciones</a></li>
+            <li><a href="#" class="footer-link">Política de Privacidad</a></li>
+            <li><a href="#" class="footer-link">Aviso Legal</a></li>
+            <li><a href="#" class="footer-link">Política de Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Veloza Motors. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Términos</a>
+          <a href="#" class="footer-bottom-link">Privacidad</a>
+          <a href="#" class="footer-bottom-link">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    // Active link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+      
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        
+        if (navLink) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            navLink.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
