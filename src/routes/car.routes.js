@@ -9,8 +9,7 @@ router.get('/', auth, async (req, res, next) => {
     res.json(cars);
 });
 
-//Ruta GET Publica para obtener un carro por ID
-router.get(), async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const car = await Car.findById(req.params.id);
         if (!car) {
@@ -20,7 +19,7 @@ router.get(), async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-};
+});
 
 router.post('/', auth, async (req, res, next) => {
     const car = new Car(req.body);
