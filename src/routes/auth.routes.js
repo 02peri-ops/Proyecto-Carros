@@ -1,6 +1,6 @@
 //Autenticación JWT
 const express = require('express');
-const bycrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const router = express.Router();
@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/register', async (req, res,next) => {
     try{
         const {username, password} = req.body;
-        const hashedPassword = await bycrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
         const user = new User({username, password: hashedPassword});
         await user.save();
         res.json({message: 'Usuario registrado exitosamente'});

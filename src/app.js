@@ -23,13 +23,13 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/cars', carRoutes);
 
+//Manejo de errores
+app.use(errorHandler);
+
 //Ruta de prueba
 app.get('/', (req, res) => { 
     res.send('¡Hola, mundo! La aplicación está funcionando correctamente.');
 });
-
-//Manejo de errores
-app.use(errorHandler);
 
 //Puerto desde variables de entorno
 const PORT = process.env.PORT || 3000;
