@@ -15,13 +15,13 @@ const app = express();
 //Conectar a la base de datos
 connectDB();
 
-//Rutas
-app.use('/api/auth', authRoutes);
-app.use('/api/cars', carRoutes);
-
 //Configuración Midelleware
 app.use(cors());
 app.use(express.json());
+
+//Rutas
+app.use('/api/auth', authRoutes);
+app.use('/api/cars', carRoutes);
 
 //Ruta de prueba
 app.get('/', (req, res) => { 
