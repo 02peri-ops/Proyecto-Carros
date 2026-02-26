@@ -26,7 +26,7 @@ router.post('/login', async (req, res,next) => {
         const valid = await bycrypt.compare(password, user.password);
         if(!valid) return res.status(400).json({message: 'Contraseña incorrecta'});
 
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '1h'});
+        const token = jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET, {expiresIn: '1h'});
         
         res.json({token});
     } catch (error) {

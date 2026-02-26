@@ -1,6 +1,7 @@
 const express = require('express');
 const Car = require('../models/cars');
 const auth = require('../middlewares/auth');
+const role = require('../middlewares/role');
 
 const router = express.Router();
 
@@ -21,18 +22,22 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-router.post('/', auth, async (req, res, next) => {
+router.post('/', auth, role('admin'), async (req, res, next) => {
     const car = new Car(req.body);
     await car.save();
     res.json({message: 'Carro agregado exitosamente'});
 });
 
-router.put('/:id', auth, async (req, res) => {
-    await Car.findByIdAndUpdate(req.params.id, req.body);
-    res.json({message: 'Carro actualizado exitosamente'});
+router.put('/:id', auth, role('admin'), async (req, res, next) => {
+    try {
+        await Car.findByIdAndUpdate(req.params.id, req.body);
+        res.json({message: 'Carro actualizado exitosamente'});
+    } catch (error) {
+        next(error);
+    }
 });
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', auth, role('admin'), async (req, res) => {
     await Car.findByIdAndDelete(req.params.id);
     res.json({message: 'Carro eliminado exitosamente'});
 });
