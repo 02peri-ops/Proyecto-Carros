@@ -1,2 +1,23 @@
 node_modules/
 .env
+
+#Logs 
+.DS_Store
+*.log
+npm-debug.log*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de build/dist
+dist/
+build/
+
+# Testing
+coverage/
+
+# Extras
+guia_frankfurter.md
