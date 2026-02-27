@@ -2,7 +2,11 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv').config({ path: './.env' });
+const path = require('path');
+
+// Cargar .env desde la raíz del proyecto
+const envPath = path.resolve(__dirname, '..', '.env');
+require('dotenv').config({ path: envPath });
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');

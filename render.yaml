@@ -4,15 +4,9 @@ services:
     env: node
     region: oregon
     buildCommand: npm install
-    startCommand: node index.js
+    startCommand: node src/app.js
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-      - key: JWT_SECRET
-        value: veloza_motors_secret_key_2024
-      - key: DB_URI
-        value: mongodb+srv://adminGSD:Vesper24@velozamotors.n1pxmh4.mongodb.net/veloza_motors?retryWrites=true&w=majority
-      - key: FRANKFURTER_API_URL
-        value: https://api.frankfurter.app
