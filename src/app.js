@@ -37,7 +37,10 @@ if (isProduction) {
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
   
   // Manejar rutas del frontend - servir index.html para cualquier ruta
-  app.get('*', (req, res) => {
+  app.get('/:slug', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+  });
+  app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
   });
 } else {
