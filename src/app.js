@@ -4,9 +4,25 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 
-// Cargar .env desde la raíz del proyecto
-const envPath = path.resolve(__dirname, '..', '.env');
-require('dotenv').config({ path: envPath });
+// Intentar cargar .env desde múltiples ubicaciones
+const envPaths = [
+  path.resolve(__dirname, '../.env'),
+  path.resolve(__dirname, '../../.env'),
+  path.resolve(__dirname, '.env'),
+  path.resolve(process.cwd(), '.env')
+];
+
+for (const envPath of envPaths) {
+  try {
+    require('dotenv').config({ path: envPath });
+    if (process.env.DB_URI) {
+      console.log('Loaded .env from:', envPath);
+      break;
+    }
+  } catch (e) {
+    // Continuar con el siguiente path
+  }
+}
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
