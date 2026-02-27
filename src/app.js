@@ -33,6 +33,9 @@ app.use('/api/exchange', exchangeRoutes);
 
 // Servir archivos estáticos del frontend en producción
 const isProduction = process.env.NODE_ENV === 'production';
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('isProduction:', isProduction);
+
 if (isProduction) {
   // En producción, resolver desde la raíz del proyecto
   const projectRoot = path.resolve(__dirname, '..');

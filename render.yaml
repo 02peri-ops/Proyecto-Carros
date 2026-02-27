@@ -10,3 +10,5 @@ services:
         value: production
       - key: PORT
         value: 10000
+      - key: DB_URI
+        value: mongodb+srv://adminGSD:Vesper24@velozamotors.n1pxmh4.mongodb.net/veloza_motors?retryWrites=true&w=majority
