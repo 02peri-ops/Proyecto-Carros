@@ -34,20 +34,30 @@ app.use('/api/exchange', exchangeRoutes);
 // Servir archivos estáticos del frontend en producción
 const isProduction = process.env.NODE_ENV === 'production';
 if (isProduction) {
-  // Usar process.cwd() para obtener la raíz del proyecto
-  const projectRoot = process.cwd();
+  // En producción, resolver desde la raíz del proyecto
+  const projectRoot = path.resolve(__dirname, '..');
   const frontendDistPath = path.join(projectRoot, 'frontend/dist');
   console.log('Serving frontend from:', frontendDistPath);
   
-  app.use(express.static(frontendDistPath));
-  
-  // Manejar rutas del frontend - servir index.html
-  app.get('/:slug', (req, res) => {
-    res.sendFile(path.join(frontendDistPath, 'index.html'));
-  });
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(frontendDistPath, 'index.html'));
-  });
+  // Verificar si la carpeta existe
+  const fs = require('fs');
+  if (fs.existsSync(frontendDistPath)) {
+    app.use(express.static(frontendDistPath));
+    
+    // Manejar rutas del frontend - servir index.html
+    app.get('/:slug', (req, res) => {
+      res.sendFile(path.join(frontendDistPath, 'index.html'));
+    });
+    app.get('/', (req, res) => {
+      res.sendFile(path.join(frontendDistPath, 'index.html'));
+    });
+  } else {
+    console.log('Frontend dist not found, serving API only');
+    // Ruta de fallback
+    app.get('/', (req, res) => { 
+      res.send('API running. Frontend not built.');
+    });
+  }
 } else {
   //Ruta de prueba
   app.get('/', (req, res) => { 
@@ -57,6 +67,11 @@ if (isProduction) {
 
 //Puerto desde variables de entorno
 const PORT = process.env.PORT || 3000;
+
+// Manejo de errores 404
+app.use((req, res) => {
+  res.status(404).json({ message: 'Ruta no encontrada' });
+});
 
 //Iniciar el servidor
 app.listen(PORT, () => {
