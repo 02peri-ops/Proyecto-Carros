@@ -30,13 +30,22 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/cars', carRoutes);
 app.use('/api/exchange', exchangeRoutes);
-//Manejo de errores
-app.use(require('./middlewares/errorHandler', errorHandler));
 
-//Ruta de prueba
-app.get('/', (req, res) => { 
-    res.send('¡Hola, mundo! La aplicación está funcionando correctamente.');
-});
+// Servir archivos estáticos del frontend en producción
+const isProduction = process.env.NODE_ENV === 'production';
+if (isProduction) {
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+  
+  // Manejar rutas del frontend - servir index.html para cualquier ruta
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+  });
+} else {
+  //Ruta de prueba
+  app.get('/', (req, res) => { 
+      res.send('¡Hola, mundo! La aplicación está funcionando correctamente.');
+  });
+}
 
 //Puerto desde variables de entorno
 const PORT = process.env.PORT || 3000;

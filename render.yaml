@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: veloza-motors-backend
+    name: veloza-motors
     env: node
     region: oregon
-    buildCommand: npm install && cp src/.env .env 2>/dev/null || true
+    buildCommand: npm install && npm run build:frontend
     startCommand: node src/app.js
     envVars:
       - key: NODE_ENV
