@@ -34,14 +34,19 @@ app.use('/api/exchange', exchangeRoutes);
 // Servir archivos estáticos del frontend en producción
 const isProduction = process.env.NODE_ENV === 'production';
 if (isProduction) {
-  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+  // Usar process.cwd() para obtener la raíz del proyecto
+  const projectRoot = process.cwd();
+  const frontendDistPath = path.join(projectRoot, 'frontend/dist');
+  console.log('Serving frontend from:', frontendDistPath);
   
-  // Manejar rutas del frontend - servir index.html para cualquier ruta
+  app.use(express.static(frontendDistPath));
+  
+  // Manejar rutas del frontend - servir index.html
   app.get('/:slug', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+    res.sendFile(path.join(frontendDistPath, 'index.html'));
   });
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+    res.sendFile(path.join(frontendDistPath, 'index.html'));
   });
 } else {
   //Ruta de prueba
