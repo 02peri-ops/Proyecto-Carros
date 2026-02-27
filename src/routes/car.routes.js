@@ -11,14 +11,23 @@ router.get('/', async (req, res, next) => {
     res.json(cars);
 });
 
-router.get('/:id', async (req, res, next) => {
-    try {
-        const car = await Car.findById(req.params.id);
-        if (!car) {
-            return res.status(404).json({ message: 'Carro no encontrado' });
-        }
-        res.json(car);
-    } catch (error) {
+router.get('/',async (req, res, next) => {
+    try{
+        const { page = 1, limit = 10 } = req.query;
+        const query = {};
+        if (marca) query.marca = marca;
+        const cars = await Car.find(query)
+            .limit(limit * 1)
+            .skip((page - 1) * limit);
+        const total = await Car.countDocuments(query);
+        res.json({
+            total,
+            page: Number(page),
+            pages: Math.ceil(total / limit),
+            data: cars
+        });
+    }
+    catch(error){
         next(error);
     }
 });
