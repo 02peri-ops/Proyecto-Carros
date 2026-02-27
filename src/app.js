@@ -8,6 +8,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
 const carRoutes = require('./routes/car.routes');
 const errorHandler = require('./middlewares/errorHandler');
+const exchangeRoutes = require('./routes/exchange.routes');
 
 //Se crea la app 
 const app = express();
@@ -22,9 +23,9 @@ app.use(express.json());
 //Rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/cars', carRoutes);
-
+app.use('/api/exchange', exchangeRoutes);
 //Manejo de errores
-app.use(require('./middlewares/errorHandler'));
+app.use(require('./middlewares/errorHandler', errorHandler));
 
 //Ruta de prueba
 app.get('/', (req, res) => { 
