@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/cars', carRoutes);
 
 //Manejo de errores
-app.use(errorHandler);
+app.use(require('./middlewares/errorHandler'));
 
 //Ruta de prueba
 app.get('/', (req, res) => { 
