@@ -4,24 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 
-// Intentar cargar .env desde múltiples ubicaciones
-const envPaths = [
-  path.resolve(__dirname, '../.env'),
-  path.resolve(__dirname, '../../.env'),
-  path.resolve(__dirname, '.env'),
-  path.resolve(process.cwd(), '.env')
-];
-
-for (const envPath of envPaths) {
-  try {
-    require('dotenv').config({ path: envPath });
-    if (process.env.DB_URI) {
-      console.log('Loaded .env from:', envPath);
-      break;
-    }
-  } catch (e) {
-    // Continuar con el siguiente path
-  }
+// Cargar .env solo si no estamos en producción (Render proporciona las variables)
+if (!process.env.DB_URI) {
+  const envPath = path.resolve(__dirname, '../.env');
+  require('dotenv').config({ path: envPath });
 }
 
 const connectDB = require('./config/db');
