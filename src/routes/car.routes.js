@@ -2,6 +2,7 @@ const express = require('express');
 const Car = require('../models/cars');
 const auth = require('../middlewares/auth');
 const role = require('../middlewares/role');
+const validateCar = require('../middlewares/validateCars');
 
 const router = express.Router();
 
@@ -23,6 +24,12 @@ router.get('/:id', async (req, res, next) => {
 });
 
 router.post('/', auth, role('admin'), async (req, res, next) => {
+    const car = new Car(req.body);
+    await car.save();
+    res.json({message: 'Carro agregado exitosamente'});
+});
+
+router.post('/', auth, validateCar, async (req, res, next) => {
     const car = new Car(req.body);
     await car.save();
     res.json({message: 'Carro agregado exitosamente'});
