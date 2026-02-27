@@ -11,7 +11,7 @@ router.post('/register', async (req, res,next) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = new User({username, password: hashedPassword});
         await user.save();
-        res.json({message: 'Usuario registrado exitosamente'});
+        res.status(201).json({message: 'Usuario registrado exitosamente'});
     } catch (error) {
         next(error);
     }
@@ -23,7 +23,7 @@ router.post('/login', async (req, res,next) => {
         const user = await User.findOne({username});
         if(!user) return res.status(400).json({message: 'Usuario no encontrado'});
 
-        const valid = await bycrypt.compare(password, user.password);
+        const valid = await bcrypt.compare(password, user.password);
         if(!valid) return res.status(400).json({message: 'Contraseña incorrecta'});
 
         const token = jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET, {expiresIn: '1h'});
