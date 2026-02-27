@@ -2,9 +2,47 @@
  * Este archivo define el servicio para obtener tasas de cambio, convertir monedas y obtener tasas históricas utilizando la API de Frankfurter.
  * Proporciona funciones para interactuar con la API y manejar errores de manera adecuada.
  */
-const fetch = require('node-fetch');
+const https = require('https');
+const { URL } = require('url');
 
 const FRANKFURTER_API = process.env.FRANKFURTER_API_URL || 'https://api.frankfurter.app';
+
+/**
+ * Helper function to make HTTPS requests
+ */
+const httpsGet = (urlString) => {
+    return new Promise((resolve, reject) => {
+        const url = new URL(urlString);
+        const options = {
+            hostname: url.hostname,
+            path: url.pathname + url.search,
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        };
+        
+        const req = https.request(options, (res) => {
+            let data = '';
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(data));
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        });
+        req.on('error', reject);
+        req.setTimeout(10000, () => {
+            req.destroy();
+            reject(new Error('Request timeout'));
+        });
+        req.end();
+    });
+};
 
 /**
  * 
@@ -12,15 +50,10 @@ const FRANKFURTER_API = process.env.FRANKFURTER_API_URL || 'https://api.frankfur
 const getExchangeRates = async (baseCurrency = 'USD', symbols = ['MXN', 'EUR']) => {
     try {
         const symbolsParam = symbols.join(',');
-        const response = await fetch(
-            `${FRANKFURTER_API}/latest?from=${baseCurrency}&to=${symbolsParam}`
-        );
+        const urlString = `${FRANKFURTER_API}/latest?from=${baseCurrency}&to=${symbolsParam}`;
+        console.log('Fetching:', urlString);
+        const data = await httpsGet(urlString);
 
-        if (!response.ok) {
-            throw new Error(`Error fetching exchange rates: ${response.statusText}`);
-        }
-
-        const data = await response.json();
         return {
             success: true,
             base: data.base,
@@ -38,15 +71,10 @@ const getExchangeRates = async (baseCurrency = 'USD', symbols = ['MXN', 'EUR']) 
 
 const convertCurrency = async (amount, from, to) => {
     try {
-        const response = await fetch(
+        const data = await httpsGet(
             `${FRANKFURTER_API}/latest?amount=${amount}&from=${from}&to=${to}`
         );
-
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);
-        }
-
-        const data = await response.json();
+        
         return {
             success: true,
             amount: amount,
@@ -65,15 +93,10 @@ const convertCurrency = async (amount, from, to) => {
 
 const getHistoricalRates = async (baseCurrency, targetCurrency, startDate, endDate) => {
     try {
-        const response = await fetch(
+        const data = await httpsGet(
             `${FRANKFURTER_API}/${startDate}..${endDate}?from=${baseCurrency}&to=${targetCurrency}`
         );
-
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);
-        }
-
-        const data = await response.json();
+        
         return {
             success: true,
             base: data.base,

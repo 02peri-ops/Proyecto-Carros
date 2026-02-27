@@ -2,10 +2,21 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useApp } from '../App'
 import CarCard from '../components/CarCard'
+import axios from 'axios'
 
 function Cars() {
   const [searchParams, setSearchParams] = useSearchParams()
   const { cars, fetchCars, loading, comparisonList, removeFromComparison } = useApp()
+  const [selectedCurrency, setSelectedCurrency] = useState('MXN')
+  const [exchangeRates, setExchangeRates] = useState(null)
+  
+  const currencies = [
+    { code: 'MXN', name: 'Peso Mexicano' },
+    { code: 'USD', name: 'Dolar Estadounidense' },
+    { code: 'EUR', name: 'Euro' },
+    { code: 'GBP', name: 'Libra Esterlina' },
+    { code: 'JPY', name: 'Yen Japones' },
+  ]
   
   const [filters, setFilters] = useState({
     marca: searchParams.get('marca') || '',
@@ -27,6 +38,20 @@ function Cars() {
     
     fetchCars(params)
     setSearchParams(params)
+  }, [])
+
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      try {
+        const response = await axios.get('/api/exchange/rates?base=MXN&symbols=USD,EUR,GBP,JPY')
+        if (response.data.success) {
+          setExchangeRates(response.data.rates)
+        }
+      } catch (error) {
+        console.error('Error fetching exchange rates:', error)
+      }
+    }
+    fetchExchangeRates()
   }, [])
 
   const handleFilterChange = (e) => {
@@ -58,11 +83,25 @@ function Cars() {
     setSearchParams({})
   }
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-MX', {
+  const formatPrice = (price, currency = 'MXN') => {
+    const currencyConfig = {
+      MXN: { locale: 'es-MX', currency: 'MXN' },
+      USD: { locale: 'en-US', currency: 'USD' },
+      EUR: { locale: 'de-DE', currency: 'EUR' },
+      GBP: { locale: 'en-GB', currency: 'GBP' },
+      JPY: { locale: 'ja-JP', currency: 'JPY' },
+    }
+    
+    const config = currencyConfig[currency] || currencyConfig.MXN
+    return new Intl.NumberFormat(config.locale, {
       style: 'currency',
-      currency: 'MXN'
+      currency: config.currency
     }).format(price)
+  }
+
+  const convertPrice = (price, targetCurrency) => {
+    if (targetCurrency === 'MXN' || !exchangeRates) return price
+    return price * exchangeRates[targetCurrency]
   }
 
   return (
@@ -131,6 +170,20 @@ function Cars() {
             <button onClick={applyFilters} className="btn btn-primary btn-block">
               Aplicar Filtros
             </button>
+
+            <div className="filter-group" style={{ marginTop: '20px' }}>
+              <label>Moneda</label>
+              <select 
+                value={selectedCurrency} 
+                onChange={(e) => setSelectedCurrency(e.target.value)}
+              >
+                {currencies.map(curr => (
+                  <option key={curr.code} value={curr.code}>
+                    {curr.code} - {curr.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </aside>
 
           {/* Cars Grid */}
@@ -154,7 +207,13 @@ function Cars() {
                 </div>
                 <div className="cars-grid">
                   {cars.map(car => (
-                    <CarCard key={car._id} car={car} />
+                    <CarCard 
+                      key={car._id} 
+                      car={car} 
+                      formatPrice={formatPrice}
+                      convertPrice={convertPrice}
+                      selectedCurrency={selectedCurrency}
+                    />
                   ))}
                 </div>
               </>

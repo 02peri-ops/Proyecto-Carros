@@ -1,17 +1,31 @@
 import { Link } from 'react-router-dom'
 import { useApp } from '../App'
 
-function CarCard({ car }) {
+function CarCard({ car, formatPrice: propFormatPrice, convertPrice: propConvertPrice, selectedCurrency }) {
   const { addToComparison, comparisonList } = useApp()
   
   const isInComparison = comparisonList.find(c => c._id === car._id)
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-MX', {
+  const defaultFormatPrice = (price, currency = 'MXN') => {
+    const currencyConfig = {
+      MXN: { locale: 'es-MX', currency: 'MXN' },
+      USD: { locale: 'en-US', currency: 'USD' },
+      EUR: { locale: 'de-DE', currency: 'EUR' },
+      GBP: { locale: 'en-GB', currency: 'GBP' },
+      JPY: { locale: 'ja-JP', currency: 'JPY' },
+    }
+    
+    const config = currencyConfig[currency] || currencyConfig.MXN
+    return new Intl.NumberFormat(config.locale, {
       style: 'currency',
-      currency: 'MXN'
+      currency: config.currency
     }).format(price)
   }
+
+  const formatPrice = propFormatPrice || defaultFormatPrice
+  const convertPrice = propConvertPrice || ((price) => price)
+  
+  const displayPrice = formatPrice(convertPrice(car.Precio, selectedCurrency || 'MXN'), selectedCurrency || 'MXN')
 
   return (
     <div className="car-card">
@@ -26,7 +40,7 @@ function CarCard({ car }) {
         <h3 className="car-title">
           <Link to={`/cars/${car._id}`}>{car.Marca} {car.Modelo}</Link>
         </h3>
-        <div className="car-price">{formatPrice(car.Precio)}</div>
+        <div className="car-price">{displayPrice}</div>
         <div className="car-features">
           <div className="car-feature">
             <span>📅</span> {car.Año}

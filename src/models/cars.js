@@ -10,6 +10,7 @@ const carSchema = new mongoose.Schema({
     Disposición: String,
     Transmisión: String,
     Tracción: String,
-    Precio: Number
+    Precio: Number,
+    Imagen: String
 });
 module.exports = mongoose.model('Car', carSchema);

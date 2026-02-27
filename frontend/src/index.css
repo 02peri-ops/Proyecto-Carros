@@ -797,6 +797,47 @@ img {
   margin-bottom: 25px;
 }
 
+.car-detail-price-section {
+  margin-bottom: 25px;
+}
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.currency-selector label {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.currency-selector select {
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.currency-selector select:hover {
+  border-color: var(--primary-color);
+}
+
+.currency-selector select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.exchange-rate-info {
+  margin-top: 8px;
+  color: #666;
+  font-style: italic;
+}
+
 .car-specs-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -845,6 +886,56 @@ img {
 .car-actions {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-success {
+  background: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background: #16a34a;
+}
+
+/* Custom Specs Section */
+.car-custom-specs {
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 12px;
+  border: 2px dashed #38bdf8;
+}
+
+.car-custom-specs h3 {
+  margin-bottom: 20px;
+  color: #0369a1;
+  font-size: 1.25rem;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.spec-name {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.spec-value {
+  color: var(--primary-color);
+  font-weight: 500;
 }
 
 /* Contact Page */

@@ -1,12 +1,24 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
+import { useApp } from '../App'
 
 function CarDetail() {
   const { id } = useParams()
   const [car, setCar] = useState(null)
   const [loading, setLoading] = useState(true)
   const [activeImage, setActiveImage] = useState(0)
+  const [selectedCurrency, setSelectedCurrency] = useState('MXN')
+  const [exchangeRates, setExchangeRates] = useState(null)
+  const { addNotification } = useApp()
+
+  const currencies = [
+    { code: 'MXN', name: 'Peso Mexicano' },
+    { code: 'USD', name: 'Dolar Estadounidense' },
+    { code: 'EUR', name: 'Euro' },
+    { code: 'GBP', name: 'Libra Esterlina' },
+    { code: 'JPY', name: 'Yen Japones' },
+  ]
 
   useEffect(() => {
     const fetchCar = async () => {
@@ -22,11 +34,39 @@ function CarDetail() {
     fetchCar()
   }, [id])
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-MX', {
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      try {
+        const response = await axios.get('/api/exchange/rates?base=MXN&symbols=USD,EUR,GBP,JPY')
+        if (response.data.success) {
+          setExchangeRates(response.data.rates)
+        }
+      } catch (error) {
+        console.error('Error fetching exchange rates:', error)
+      }
+    }
+    fetchExchangeRates()
+  }, [])
+
+  const formatPrice = (price, currency = 'MXN') => {
+    const currencyConfig = {
+      MXN: { locale: 'es-MX', currency: 'MXN' },
+      USD: { locale: 'en-US', currency: 'USD' },
+      EUR: { locale: 'de-DE', currency: 'EUR' },
+      GBP: { locale: 'en-GB', currency: 'GBP' },
+      JPY: { locale: 'ja-JP', currency: 'JPY' },
+    }
+    
+    const config = currencyConfig[currency] || currencyConfig.MXN
+    return new Intl.NumberFormat(config.locale, {
       style: 'currency',
-      currency: 'MXN'
+      currency: config.currency
     }).format(price)
+  }
+
+  const convertPrice = (price, targetCurrency) => {
+    if (targetCurrency === 'MXN' || !exchangeRates) return price
+    return price * exchangeRates[targetCurrency]
   }
 
   if (loading) {
@@ -44,7 +84,7 @@ function CarDetail() {
       <div className="car-detail-page">
         <div className="container">
           <div className="not-found">
-            <h2>Vehículo no encontrado</h2>
+            <h2>Vehiculo no encontrado</h2>
             <Link to="/cars" className="btn btn-primary">Volver al inventario</Link>
           </div>
         </div>
@@ -92,7 +132,30 @@ function CarDetail() {
           {/* Info */}
           <div className="car-detail-info">
             <h1>{car.Marca} {car.Modelo}</h1>
-            <div className="car-detail-price">{formatPrice(car.Precio)}</div>
+            
+            <div className="car-detail-price-section">
+              <div className="car-detail-price">{formatPrice(convertPrice(car.Precio, selectedCurrency), selectedCurrency)}</div>
+              
+              <div className="currency-selector">
+                <label>Moneda:</label>
+                <select 
+                  value={selectedCurrency} 
+                  onChange={(e) => setSelectedCurrency(e.target.value)}
+                >
+                  {currencies.map(curr => (
+                    <option key={curr.code} value={curr.code}>
+                      {curr.code} - {curr.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              
+              {selectedCurrency !== 'MXN' && exchangeRates && (
+                <div className="exchange-rate-info">
+                  <small>1 MXN = {exchangeRates[selectedCurrency]} {selectedCurrency}</small>
+                </div>
+              )}
+            </div>
             
             <div className="car-specs-grid">
               <div className="spec-item">
@@ -112,8 +175,8 @@ function CarDetail() {
               <div className="spec-item">
                 <span className="spec-icon">⚙️</span>
                 <div className="spec-content">
-                  <span className="spec-label">Transmisión</span>
-                  <span className="spec-value">{car.Transmision || 'Automático'}</span>
+                  <span className="spec-label">Transmision</span>
+                  <span className="spec-value">{car.Transmision || 'Automatico'}</span>
                 </div>
               </div>
               <div className="spec-item">
@@ -125,28 +188,62 @@ function CarDetail() {
               </div>
             </div>
 
+            {/* === YOUR CAR SPECS START HERE === */}
+            <div className="car-custom-specs">
+              <h3>Especificaciones del Vehiculo</h3>
+              <div className="specs-grid">
+                <div className="spec-row">
+                  <span className="spec-name">Motor</span>
+                  <span className="spec-value">{car.Cilindraje || 4} cilindro(s) {car.Disposición || 'en línea'}</span>
+                </div>
+                <div className="spec-row">
+                  <span className="spec-name">Cilindrada</span>
+                  <span className="spec-value">{car.Cilindraje ? (car.Cilindraje <= 4 ? '2.0L' : '3.0L') : '2.5L'}</span>
+                </div>
+                <div className="spec-row">
+                  <span className="spec-name">Transmision</span>
+                  <span className="spec-value">{car.Transmision || 'Automático'}</span>
+                </div>
+                <div className="spec-row">
+                  <span className="spec-name">Traccion</span>
+                  <span className="spec-value">{car.Tracción || 'Delantera'}</span>
+                </div>
+                <div className="spec-row">
+                  <span className="spec-name">Combustible</span>
+                  <span className="spec-value">{car.Combustible || 'Gasolina'}</span>
+                </div>
+              </div>
+            </div>
+            {/* === YOUR CAR SPECS END HERE === */}
+
             <div className="car-description">
-              <h3>Descripción</h3>
+              <h3>Descripcion</h3>
               <p>{car.Descripcion || `Excelente ${car.Marca} ${car.Modelo} ${car.Año}, en perfecto estado. 
-              Kilometraje certificado, único dueño, todos los servicios hecho en agencia. 
+              Kilometraje certificado, unico dueño, todos los servicios hecho en agencia. 
               Incluye garantía y financiamiento disponible.`}</p>
             </div>
 
             <div className="car-features-list">
-              <h3>Características</h3>
+              <h3>Caracteristicas</h3>
               <ul>
-                <li>✅ Aire acondicionado</li>
-                <li>✅ Bluetooth</li>
-                <li>✅ Cámara de reversa</li>
-                <li>✅ Sunroof</li>
-                <li>✅ Asientos de piel</li>
-                <li>✅ Sistema de navegación</li>
+                <li>Aire acondicionado</li>
+                <li>Bluetooth</li>
+                <li>Camara de reversa</li>
+                <li>Sunroof</li>
+                <li>Asientos de piel</li>
+                <li>Sistema de navegación</li>
               </ul>
             </div>
 
             <div className="car-actions">
+              <button 
+                className="btn btn-success btn-lg"
+                onClick={() => addNotification('¡Gracias por tu interes! Te contactaremos pronto.', 'success')}
+              >
+                Comprar Ahora
+              </button>
               <Link to="/contact" className="btn btn-primary btn-lg">
-                Solicitar Información
+                Solicitar Informacion
               </Link>
               <Link to="/contact" className="btn btn-secondary btn-lg">
                 Agendar Prueba de Manejo
