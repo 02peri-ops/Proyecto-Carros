@@ -280,74 +280,13 @@ Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
 
 ### Detalle del Vehiculo
 
-> **NOTA:** Reemplaza esta seccion con tu captura de pantalla real.
->
-> **Tamano recomendado:** 1200x800 px (ancho completo) o 800x500 px (responsivo)
->
-> **Formato:** PNG o JPG con compresion moderada
->
-> **Nombre sugerido:** screenshot-car-detail.png
-
-```
-+-----------------------------------------------------------------------+
-|                                                                       |
-|   +===============================================================+   |
-|   |                                                               |   |
-|   |                                                               |   |
-|   |              [INSERTAR CAPTURA DE PANTALLA AQUI]             |   |
-|   |                                                               |   |
-|   |         +------------------------------------------+          |   |
-|   |         |                                          |          |   |
-|   |         |    Captura de: Detalle del Vehiculo      |          |   |
-|   |         |                                          |          |   |
-|   |         |    - Imagen principal del vehiculo       |          |   |
-|   |         |    - Informacion general (marca, modelo)|          |   |
-|   |         |    - Especificaciones tecnicas           |          |   |
-|   |         |    - Precio y conversion de divisas      |          |   |
-|   |         |    - Descripcion completa               |          |   |
-|   |         |                                          |          |   |
-|   |         +------------------------------------------+          |   |
-|   |                                                               |   |
-|   +===============================================================+   |
-|                                                                       |
-+-----------------------------------------------------------------------+
-```
+![alt text](image-6.png)
 
 ---
 
 ### Panel de Administracion
 
-> **NOTA:** Reemplaza esta seccion con tu captura de pantalla real.
->
-> **Tamano recomendado:** 1200x800 px (ancho completo) o 800x500 px (responsivo)
->
-> **Formato:** PNG o JPG con compresion moderada
->
-> **Nombre sugerido:** screenshot-admin.png
-
-```
-+-----------------------------------------------------------------------+
-|                                                                       |
-|   +===============================================================+   |
-|   |                                                               |   |
-|   |                                                               |   |
-|   |              [INSERTAR CAPTURA DE PANTALLA AQUI]             |   |
-|   |                                                               |   |
-|   |         +------------------------------------------+          |   |
-|   |         |                                          |          |   |
-|   |         |    Captura de: Panel de Administracion   |          |   |
-|   |         |                                          |          |   |
-|   |         |    - Tabla de gestion de vehiculos        |          |   |
-|   |         |    - Opciones de editar y eliminar        |          |   |
-|   |         |    - Formulario para agregar vehiculos   |          |   |
-|   |         |    - Estadisticas del inventario          |          |   |
-|   |         |                                          |          |   |
-|   |         +------------------------------------------+          |   |
-|   |                                                               |   |
-|   +===============================================================+   |
-|                                                                       |
-+-----------------------------------------------------------------------+
-```
+![alt text](image-5.png)
 
 ---
 
