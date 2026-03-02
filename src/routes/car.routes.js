@@ -33,7 +33,7 @@ const loadCarsFromJSON = () => {
             Disposición: car['Disposición'] || car.Disposicion,
             Tracción: car['Tracción'] || car.Traccion,
             Estado: car.Estado,
-            Imagen: defaultImage
+            Imagen: car.Imagen || defaultImage
         }));
         
         console.log(`Loaded ${carsData.length} cars from local JSON`);
