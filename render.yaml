@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: veloza-motors
+    env: node
+    region: oregon
+    buildCommand: npm install && cd frontend && npm install && npm run build
+    startCommand: node src/app.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        value: veloza_motors_secret_key_2024

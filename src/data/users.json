@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "_id": "admin-001",
+      "username": "admin",
+      "password": "$2b$10$5i8IarhnQ6greECz71NBfON/7MsqfBQMhnuAYfwBQhuhapUFv1mqy",
+      "role": "admin"
+    },
+    {
+      "_id": "user-1772464662272",
+      "username": "testuser",
+      "password": "$2b$10$5bvJcDVhkIU7pHvzpbRYB.UGPAtx8uKON.1H3TVCfxlBzF0/HPQcq",
+      "role": "user"
+    },
+    {
+      "_id": "user-1772465398475",
+      "username": "logintest",
+      "password": "$2b$10$n7jZhuhm0vOLUS0fiWFiseLht37qNM/.hkenGgQhhOlS.mn45mrLS",
+      "role": "user"
+    },
+    {
+      "_id": "user-1772465398614",
+      "username": "authtest",
+      "password": "$2b$10$xfuCvFkAJvpOMT.W6VA7S.A1oE2JCoR2cIFkeWeSxwUUrDyRNQAUq",
+      "role": "user"
+    }
+  ]
+}

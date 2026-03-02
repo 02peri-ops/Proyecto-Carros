@@ -1,0 +1,960 @@
+[{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b679d"
+  },
+  "Marca": "Jaguar",
+  "Modelo": "F-Type R",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 4300000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a1"
+  },
+  "Marca": "Porsche",
+  "Modelo": "718 Cayman GT4",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "Bóxer",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 2900000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a7"
+  },
+  "Marca": "Bugatti",
+  "Modelo": "Chiron",
+  "Año": 2022,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 16,
+  "Disposición": "W",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 48000000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a5"
+  },
+  "Marca": "Maserati",
+  "Modelo": "MC20",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 6700000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a8"
+  },
+  "Marca": "Koenigsegg",
+  "Modelo": "Jesko",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 39000000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a4"
+  },
+  "Marca": "Alfa Romeo",
+  "Modelo": "Giulia Quadrifoglio",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 2600000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6799"
+  },
+  "Marca": "Mercedes-Benz",
+  "Modelo": "AMG GT R",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 6100000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6793"
+  },
+  "Marca": "Porsche",
+  "Modelo": "911 Turbo S",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "Bóxer",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 5200000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6794"
+  },
+  "Marca": "Ferrari",
+  "Modelo": "F8 Tributo",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 6800000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6797"
+  },
+  "Marca": "Chevrolet",
+  "Modelo": "Corvette Z06",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 4200000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b679a"
+  },
+  "Marca": "Nissan",
+  "Modelo": "GT-R Nismo",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 5600000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b679b"
+  },
+  "Marca": "Toyota",
+  "Modelo": "Supra GR",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "L",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 1800000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b679f"
+  },
+  "Marca": "Dodge",
+  "Modelo": "Challenger Hellcat",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 3200000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a9"
+  },
+  "Marca": "Rimac",
+  "Modelo": "Nevera",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Eléctrico",
+  "Cilindraje": 0,
+  "Disposición": "N/A",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 42000000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6792"
+  },
+  "Marca": "Audi",
+  "Modelo": "R8",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 5000000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67aa"
+  },
+  "Marca": "Tesla",
+  "Modelo": "Roadster",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Eléctrico",
+  "Cilindraje": 0,
+  "Disposición": "N/A",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 3200000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b679c"
+  },
+  "Marca": "Aston Martin",
+  "Modelo": "Vantage",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 5900000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a0"
+  },
+  "Marca": "Lexus",
+  "Modelo": "LC 500",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 3000000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b679e"
+  },
+  "Marca": "Ford",
+  "Modelo": "Mustang Shelby GT500",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 3500000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a3"
+  },
+  "Marca": "Mercedes-Benz",
+  "Modelo": "AMG C63 S",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 2700000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6795"
+  },
+  "Marca": "Lamborghini",
+  "Modelo": "Huracán EVO",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 7200000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6796"
+  },
+  "Marca": "McLaren",
+  "Modelo": "720S",
+  "Año": 2023,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 6900000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a6"
+  },
+  "Marca": "Pagani",
+  "Modelo": "Huayra",
+  "Año": 2022,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 12,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 25000000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b6798"
+  },
+  "Marca": "BMW",
+  "Modelo": "M4 Competition",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "L",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2800000
+},
+{
+  "_id": {
+    "$oid": "697a3c46a5dabc48702b67a2"
+  },
+  "Marca": "BMW",
+  "Modelo": "M8 Competition",
+  "Año": 2024,
+  "Estado": "Nuevo",
+  "Kilometraje": 0,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 4800000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac623"
+  },
+  "Marca": "Audi",
+  "Modelo": "RS7",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 42000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 1650000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac624"
+  },
+  "Marca": "BMW",
+  "Modelo": "M5",
+  "Año": 2018,
+  "Estado": "Usado",
+  "Kilometraje": 38000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 1900000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac625"
+  },
+  "Marca": "Mercedes-Benz",
+  "Modelo": "AMG GT S",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 29000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 2400000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac626"
+  },
+  "Marca": "Porsche",
+  "Modelo": "911 Carrera S",
+  "Año": 2015,
+  "Estado": "Usado",
+  "Kilometraje": 51000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "Bóxer",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 2100000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac627"
+  },
+  "Marca": "Ferrari",
+  "Modelo": "458 Italia",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 36000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 4800000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac628"
+  },
+  "Marca": "Lamborghini",
+  "Modelo": "Huracán LP610-4",
+  "Año": 2015,
+  "Estado": "Usado",
+  "Kilometraje": 33000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 5200000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac629"
+  },
+  "Marca": "McLaren",
+  "Modelo": "650S",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 27000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 4600000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac62a"
+  },
+  "Marca": "Nissan",
+  "Modelo": "GT-R",
+  "Año": 2017,
+  "Estado": "Usado",
+  "Kilometraje": 41000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2600000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac62b"
+  },
+  "Marca": "Chevrolet",
+  "Modelo": "Corvette Z51",
+  "Año": 2015,
+  "Estado": "Usado",
+  "Kilometraje": 47000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 1700000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac62c"
+  },
+  "Marca": "Ford",
+  "Modelo": "Mustang GT",
+  "Año": 2018,
+  "Estado": "Usado",
+  "Kilometraje": 35000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 1200000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac62d"
+  },
+  "Marca": "Dodge",
+  "Modelo": "Viper GTS",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 29000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 3200000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac62e"
+  },
+  "Marca": "Jaguar",
+  "Modelo": "F-Type S",
+  "Año": 2017,
+  "Estado": "Usado",
+  "Kilometraje": 44000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 1800000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac62f"
+  },
+  "Marca": "Aston Martin",
+  "Modelo": "DB11",
+  "Año": 2018,
+  "Estado": "Usado",
+  "Kilometraje": 26000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 3900000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac630"
+  },
+  "Marca": "Lexus",
+  "Modelo": "RC F",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 52000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 1500000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac631"
+  },
+  "Marca": "Alfa Romeo",
+  "Modelo": "4C",
+  "Año": 2015,
+  "Estado": "Usado",
+  "Kilometraje": 31000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 4,
+  "Disposición": "L",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 2200000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac632"
+  },
+  "Marca": "BMW",
+  "Modelo": "i8",
+  "Año": 2017,
+  "Estado": "Usado",
+  "Kilometraje": 39000,
+  "Combustible": "Híbrido",
+  "Cilindraje": 3,
+  "Disposición": "L",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2100000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac633"
+  },
+  "Marca": "Mercedes-Benz",
+  "Modelo": "AMG E63 S",
+  "Año": 2019,
+  "Estado": "Usado",
+  "Kilometraje": 28000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2500000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac634"
+  },
+  "Marca": "Porsche",
+  "Modelo": "Panamera Turbo",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 46000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2700000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac635"
+  },
+  "Marca": "Maserati",
+  "Modelo": "GranTurismo",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 58000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 1900000
+},
+{
+  "_id": {
+    "$oid": "697bb7f36c3c4675c9dac636"
+  },
+  "Marca": "Tesla",
+  "Modelo": "Model S P100D",
+  "Año": 2019,
+  "Estado": "Usado",
+  "Kilometraje": 34000,
+  "Combustible": "Eléctrico",
+  "Cilindraje": 0,
+  "Disposición": "N/A",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2300000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac638"
+  },
+  "Marca": "Audi",
+  "Modelo": "R8 V10 Plus",
+  "Año": 2017,
+  "Estado": "Usado",
+  "Kilometraje": 34000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 3800000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac639"
+  },
+  "Marca": "BMW",
+  "Modelo": "M3",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 48000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "L",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 1600000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac63a"
+  },
+  "Marca": "Mercedes-Benz",
+  "Modelo": "AMG S63 Coupé",
+  "Año": 2015,
+  "Estado": "Usado",
+  "Kilometraje": 52000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2600000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac63b"
+  },
+  "Marca": "Porsche",
+  "Modelo": "Cayman S",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 61000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "Bóxer",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 1700000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac63c"
+  },
+  "Marca": "Ferrari",
+  "Modelo": "California T",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 29000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 4200000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac63d"
+  },
+  "Marca": "Lamborghini",
+  "Modelo": "Gallardo LP560-4",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 45000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 4100000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac63e"
+  },
+  "Marca": "McLaren",
+  "Modelo": "570S",
+  "Año": 2018,
+  "Estado": "Usado",
+  "Kilometraje": 22000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 4800000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac63f"
+  },
+  "Marca": "Nissan",
+  "Modelo": "370Z Nismo",
+  "Año": 2016,
+  "Estado": "Usado",
+  "Kilometraje": 53000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 1100000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac640"
+  },
+  "Marca": "Chevrolet",
+  "Modelo": "Camaro ZL1",
+  "Año": 2018,
+  "Estado": "Usado",
+  "Kilometraje": 31000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 1900000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac641"
+  },
+  "Marca": "Ford",
+  "Modelo": "GT",
+  "Año": 2017,
+  "Estado": "Usado",
+  "Kilometraje": 9000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 6,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 14000000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac642"
+  },
+  "Marca": "Aston Martin",
+  "Modelo": "V12 Vantage",
+  "Año": 2015,
+  "Estado": "Usado",
+  "Kilometraje": 37000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 12,
+  "Disposición": "V",
+  "Transmisión": "Manual",
+  "Tracción": "Trasera",
+  "Precio": 3500000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac643"
+  },
+  "Marca": "Jaguar",
+  "Modelo": "XKR-S",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 64000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 1800000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac644"
+  },
+  "Marca": "Lexus",
+  "Modelo": "LFA",
+  "Año": 2014,
+  "Estado": "Usado",
+  "Kilometraje": 21000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 10,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 12000000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac645"
+  },
+  "Marca": "Maserati",
+  "Modelo": "Quattroporte GTS",
+  "Año": 2017,
+  "Estado": "Usado",
+  "Kilometraje": 49000,
+  "Combustible": "Gasolina",
+  "Cilindraje": 8,
+  "Disposición": "V",
+  "Transmisión": "Automática",
+  "Tracción": "Trasera",
+  "Precio": 2300000
+},
+{
+  "_id": {
+    "$oid": "697bb8e56c3c4675c9dac646"
+  },
+  "Marca": "Tesla",
+  "Modelo": "Model X Performance",
+  "Año": 2018,
+  "Estado": "Usado",
+  "Kilometraje": 36000,
+  "Combustible": "Eléctrico",
+  "Cilindraje": 0,
+  "Disposición": "N/A",
+  "Transmisión": "Automática",
+  "Tracción": "AWD",
+  "Precio": 2400000
+}]
