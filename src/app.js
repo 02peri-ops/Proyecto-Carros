@@ -1,16 +1,14 @@
 // Importar las dependencias
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
 const path = require('path');
 
 // Cargar .env solo si no estamos en producción (Render proporciona las variables)
-if (!process.env.DB_URI) {
+if (!process.env.PORT) {
   const envPath = path.resolve(__dirname, '../.env');
   require('dotenv').config({ path: envPath });
 }
 
-const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
 const carRoutes = require('./routes/car.routes');
 const errorHandler = require('./middlewares/errorHandler');
@@ -18,9 +16,6 @@ const exchangeRoutes = require('./routes/exchange.routes');
 
 //Se crea la app 
 const app = express();
-
-//Conectar a la base de datos
-connectDB();
 
 //Configuración Midelleware
 app.use(cors());
