@@ -43,10 +43,7 @@ if (isProduction) {
     app.use(express.static(frontendDistPath));
     
     // Manejar rutas del frontend - servir index.html
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendDistPath, 'index.html'));
-  });
-    app.get('/', (req, res) => {
+    app.get('(.*)', (req, res) => {
       res.sendFile(path.join(frontendDistPath, 'index.html'));
     });
   } else {
