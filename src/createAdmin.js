@@ -1,8 +1,9 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-require("dotenv").config();
-
-const User = require("./models/user"); // ajusta la ruta si es diferente
+const User = require("./models/user");
 
 mongoose.connect(process.env.DB_URI)
   .then(async () => {
