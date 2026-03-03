@@ -12,7 +12,8 @@
   "Disposición": "V",
   "Transmisión": "Automática",
   "Tracción": "AWD",
-  "Precio": 4300000
+  "Precio": 4300000,
+  "Imagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/l/RT_V_3226635ce2814cba9ca0a97d0a12aaa3.jpg"
 },
 {
   "_id": {
@@ -45,7 +46,8 @@
   "Disposición": "W",
   "Transmisión": "Automática",
   "Tracción": "AWD",
-  "Precio": 48000000
+  "Precio": 48000000,
+  "Imagen": "https://i.pinimg.com/736x/11/55/8c/11558c555a2e04ed5ed85f2385c9ec9c.jpg"
 },
 {
   "_id": {
@@ -61,7 +63,8 @@
   "Disposición": "V",
   "Transmisión": "Automática",
   "Tracción": "Trasera",
-  "Precio": 6700000
+  "Precio": 6700000,
+  "Imagen": "https://images.dealer.com/ddc/vehicles/2024/Maserati/MC20/Coupe/color/Exclusive%20Giallo%20Genio-Q6FW-206,163,51-640-en_US.jpg"
 },
 {
   "_id": {
@@ -77,7 +80,8 @@
   "Disposición": "V",
   "Transmisión": "Automática",
   "Tracción": "Trasera",
-  "Precio": 39000000
+  "Precio": 39000000,
+  "Imagen": "https://www.diariomotor.com/imagenes/2019/03/koenigsegg-jesko-visi%C3%B3n-absoluta-624731.jpg?class=XL"
 },
 {
   "_id": {
@@ -93,7 +97,8 @@
   "Disposición": "V",
   "Transmisión": "Automática",
   "Tracción": "Trasera",
-  "Precio": 2600000
+  "Precio": 2600000,
+  "Imagen": "https://img.autobytel.com/chrome/colormatched_01/white/1280/cc_2023alc32_01_1280/cc_2023alc320025_01_1280_pjv.jpg"
 },
 {
   "_id": {
