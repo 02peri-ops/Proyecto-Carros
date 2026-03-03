@@ -114,7 +114,8 @@
   "Disposición": "V",
   "Transmisión": "Automática",
   "Tracción": "Trasera",
-  "Precio": 6100000
+  "Precio": 6100000,
+  "Imagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_96df19c2a80345c2b6f0218b71c077a7.webp"
 },
 {
   "_id": {
@@ -130,7 +131,8 @@
   "Disposición": "Bóxer",
   "Transmisión": "Automática",
   "Tracción": "AWD",
-  "Precio": 5200000
+  "Precio": 5200000,
+  "Imagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_37aec7ee49e04f9e9aed91ed9c40a9be.jpg"
 },
 {
   "_id": {
@@ -146,7 +148,8 @@
   "Disposición": "V",
   "Transmisión": "Automática",
   "Tracción": "Trasera",
-  "Precio": 6800000
+  "Precio": 6800000,
+  "Imagen": "https://ymimg1.b8cdn.com/resized/car_model/9093/pictures/9017376/webp_listing_main_01.webp"
 },
 {
   "_id": {
@@ -162,7 +165,8 @@
   "Disposición": "V",
   "Transmisión": "Manual",
   "Tracción": "Trasera",
-  "Precio": 4200000
+  "Precio": 4200000,
+  "Imagen": "https://es.valleychevy.com/wp-content/uploads/2024/01/corvette-z06-2024-black.jpg"
 },
 {
   "_id": {
